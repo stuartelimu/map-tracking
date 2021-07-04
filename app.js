@@ -1,51 +1,12 @@
 import 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'
 
-const coordinates = [
-    [
-        -122.419416,
-        37.774929
-    ],
-    [
-        -122.419416,
-        37.774929
-    ],
-    [
-        121.473701,
-        31.230416
-    ],
-    [
-        121.473701,
-        31.230416
-    ],
-    [
-        -122.083851,
-        37.386052
-    ],
-    [
-        -122.083851,
-        37.386052
-    ],
-    [
-        -0.127758,
-        51.507351
-    ],
-    [
-        -0.127758,
-        51.507351
-    ],
-    [
-        -122.083851,
-        37.386052
-    ]
-]
-
-const ccc = JSON.parse(window.localStorage.getItem('coordinates'));
+const coordinates = JSON.parse(window.localStorage.getItem('coordinates'));
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3R1ZSIsImEiOiJjanpzZ3hjdnExOW8wM2RvMGc1c2cyMXVyIn0.8DMP1OgiHAaqk3TT3vkRAQ';
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    center: [121.473701,31.230416], // starting position [lng, lat]
+    center: coordinates[0], // starting position [lng, lat]
     zoom: 15 // starting zoom
 });
 
