@@ -39,6 +39,8 @@ const coordinates = [
     ]
 ]
 
+const ccc = JSON.parse(window.localStorage.getItem('coordinates'));
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3R1ZSIsImEiOiJjanpzZ3hjdnExOW8wM2RvMGc1c2cyMXVyIn0.8DMP1OgiHAaqk3TT3vkRAQ';
 const map = new mapboxgl.Map({
     container: 'map', // container ID

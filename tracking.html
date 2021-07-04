@@ -10,9 +10,12 @@
     <button id="start">Start</button>
     <button id="stop">Stop</button>
 
+    <div id="data"></div>
+
     <script>
         const start = document.querySelector('#start')
         const stop = document.querySelector('#stop')
+        const dataContainer = document.querySelector('#data')
 
         const coordinates = [];
 
@@ -21,6 +24,7 @@
                 data => {
                     console.log(data);
                     coordinates.push([data.coords.longitude, data.coords.latitude])
+                    dataContainer.textContent = coordinates;
                     window.localStorage.setItem("coordinates", JSON.stringify(coordinates));
                 },
                 error => {
